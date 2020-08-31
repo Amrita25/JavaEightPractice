@@ -1,6 +1,7 @@
 package com.practice.java8;
 
 import java.util.*;
+import java.util.function.Consumer;
 import java.util.function.Predicate;
 
 public class Unit1Exercise {
@@ -12,10 +13,10 @@ public class Unit1Exercise {
 			}
 		}
 	}
-	public static void printPeopleUsingPredicate(List<Person> people,Predicate<Person> pr){
+	public static void printPeopleUsingPredicate(List<Person> people,Predicate<Person> pr,Consumer<Person> cons){
 		for(Person p : people){
 			if(pr.test(p)){
-				System.out.println(p);
+				cons.accept(p);
 			}
 		}
 	}
@@ -31,8 +32,8 @@ public class Unit1Exercise {
 		Collections.sort(people,(person1,person2)->person1.getLname().compareTo(person2.getLname()));
 		System.out.println(people);
 		
-		printPeopleUsingPredicate(people,p->p.getLname().startsWith("S"));
-		printPeopleUsingPredicate(people,p->p.getFname().startsWith("C"));
+		printPeopleUsingPredicate(people,p->p.getLname().startsWith("S"),s->System.out.println(s));
+		printPeopleUsingPredicate(people,p->p.getFname().startsWith("C"),s->System.out.println(s.getFname()));
 		
 	}
 
