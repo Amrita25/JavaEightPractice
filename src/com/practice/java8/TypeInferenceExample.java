@@ -10,6 +10,7 @@ public class TypeInferenceExample {
 		// TODO Auto-generated method stub
 		//StringLengthLambda myLambda = s->s.length();
 		printLambda(s->s.length(),"Hello  World");
+		
 
 	}
 	

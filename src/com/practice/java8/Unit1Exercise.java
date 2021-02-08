@@ -29,6 +29,21 @@ public class Unit1Exercise {
 				new Person("Caroline","Forbes",25),
 				new Person("Damon","Salvator",25));
 		
+		List<Person> people2 = Arrays.asList(new Person("ABC","DEF",25),
+				new Person("Atanu","Mahata",25),
+				new Person("Biltu","Baby",30),
+				new Person("Puchi","Majumder",28),
+				new Person("Caroline","Forbes",25),
+				new Person("Damon","Salvator",25));
+		
+		people.forEach(person1->{
+			people2.forEach(person2->{
+				if(person1.getFname().equals(person2.getFname())){
+					System.out.println(person2.getFname());
+				}
+			});
+		});
+		
 		Collections.sort(people,(person1,person2)->person1.getLname().compareTo(person2.getLname()));
 		System.out.println(people);
 		
